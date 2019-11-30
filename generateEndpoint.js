@@ -39,8 +39,6 @@ const generateCharacterEndpoint = function(parameters) {
     return link;
 }
 
-console.log(generateCharacterEndpoint({house: 'Gryffindor', deathEater: true, name: 4}))
-
 /*
 
 To generate a link, call the function with an object as argument
