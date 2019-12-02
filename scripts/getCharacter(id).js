@@ -8,4 +8,4 @@ function getCharacter(id) {
 }
 
 
-export default getCharacter;
+
