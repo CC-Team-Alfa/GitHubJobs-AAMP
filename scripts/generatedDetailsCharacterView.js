@@ -5,6 +5,6 @@ const generatedDetailsCharacterView = function(character){
     Object.keys(character).map(key => element = `${element}
     <h5>${key}: ${character[key]}</h5>`);
     element = `${element}
-    </div>`;
+</div>`;
     return element;
 }
