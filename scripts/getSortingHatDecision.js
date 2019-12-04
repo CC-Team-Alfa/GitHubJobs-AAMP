@@ -2,7 +2,7 @@
 //Returns a promise conatning a string
 const getSortingHatDecision = function() {
    return fetch('https://www.potterapi.com/v1/sortingHat') //does not requiare a key
-    .then(res => res.json() )
+    .then(res => res.json())
     .catch(er => {
         console.log(er);
         return er.message;
