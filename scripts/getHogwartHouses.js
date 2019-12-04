@@ -9,5 +9,3 @@ function getHouse(){
         return er.message
     })
 }
-
-console.log(getHouse());
