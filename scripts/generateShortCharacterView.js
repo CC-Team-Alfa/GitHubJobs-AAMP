@@ -7,10 +7,10 @@ const generatedShortCharacterView = function(character){
     Object.keys(character).map(key => {
         if(chosenProperties.includes(key)){
             element = `${element}
-            <h6>${key}: ${character[key]}</h6>`;
+                <h6>${key}: ${character[key]}</h6>`;
         }
     });
     element = `${element}
-</div>`;
+            </div>`;
     return element;
 }
