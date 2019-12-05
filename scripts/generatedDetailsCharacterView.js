@@ -9,6 +9,6 @@ const generatedDetailsCharacterView = function(character){
         }
     })
     element = `${element}
-    </div>`;
+</div>`;
     return element;
 }
