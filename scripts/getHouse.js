@@ -3,7 +3,7 @@
 async function getHouse(name){
     let id = 0;
 
-    const houses = await getAllHouses();
+    const houses = await getHogwartHouses();
     for (let house of houses) {
         if (house.name == name) {
             id = house._id;
@@ -20,6 +20,8 @@ async function getHouse(name){
     });
 }
 
+
+//dodałem funkcję tutaj, bo kolejny plik jest nam potrzebny jak kolejny Horkruks...
 function generateHouseElement(house){
     return `<p>Your house is:</p>
             <img src="./assets/images/${house.name}.jpg" alt="${house.name} house logo">
