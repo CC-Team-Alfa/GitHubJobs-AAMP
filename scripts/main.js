@@ -4,11 +4,13 @@ let f2 = document.getElementById('search-filters');
 function disable (f) {
     for (let i = 0; i < f.children.length; i++) {
         f.children[i].children[0].disabled = true;
+        f.children[i].children[0].style.opacity = 0.5;
     }
 };
 function unable (f) {
     for (let i = 0; i < f.children.length; i++) {
         f.children[i].children[0].disabled = false;
+        f.children[i].children[0].style.opacity = 1;
     }
 };
 let f1Active = true;
@@ -47,3 +49,8 @@ generateHouseButton.addEventListener('click', async () => {
     houseDiv.innerHTML = generateHouseElement(houseInfo);
     generateHouseButton.parentElement.appendChild(houseDiv);
 }, { once: true});
+
+document.body.addEventListener('dblclick', (e) => {
+   if (e.shiftKey)
+    document.body.innerHTML = `<img src="./assets/images/hariPota.jpg">`
+});
