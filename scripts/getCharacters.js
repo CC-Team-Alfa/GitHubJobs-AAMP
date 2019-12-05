@@ -8,7 +8,7 @@ Parameter is an object with strictly defined key value pairs
 Returns a promise contaning array of objects
 */
 const getCharacters = function (condition) {
-    let link = generateCharacterEndpoint(condition);
+    const link = generateCharacterEndpoint(condition);
     return fetch(link)
     .then(res => res.json())
     .catch(er => {

@@ -65,20 +65,39 @@
                     <p class="mbr-text align-center display-5 pb-3 mbr-fonts-style">
                         The wizarding world is filled with memorable characters.
                     </p>
-                    
-                    <form id="search-name">Search by name
+
+                    <h3>Search by name</h3>
+                    <form id="search-name">
                         <label><input id="name" type="search" placeholder="Enter character name"></label>
                         <label>Reset<input type="reset"></label>
                     </form>
+                    <h3>Search by filters</h3>
+                    <form id="search-filters">
+                        <label>House:>
+                            <select name="house">
+                                <option value="none">Do not filter</option>
+                                <option value="Gryffindor">Gryffindor</option>
+                                <option value="Ravenclaw">Ravenclaw</option>
+                                <option value="Slytherin">Slytherin</option>
+                                <option value="Hufflepuff">Hufflepuff</option>
+                            </select>
+                        </label>
+                        <label>Blood Status:>
+                            <select name="bloodStatus">
+                                <option value="none">Do not filter</option>
+                                <option value="pure-blood">Pure blood</option>
+                                <option value="half-blood">Half blood</option>
+                                <option value="muggle-born">Muggle born</option>
+                                <option value="unknown">Unknown</option>
+                            </select>
+                        </label>
+                        <!-- Pozostałe opcje do zrobienia -->
 
-                    <form id="search-filters">Search by filters
-                        <label><input id="name" type="search" placeholder="Enter character name"></label>
                         <label>Reset<input type="reset"></label>
                     </form>
                     <button id="find">Find!</button>
-
-
-
+                    <div id="result">
+                    </div>
                 </div>
             </div>
         </div>
@@ -94,7 +113,6 @@
                     </p>
                     <img src="./assets/images/tiara.jpg" alt="Sorting Hat">
                     <button id="generate-house">Find out what's your house!</button>
-
                 </div>
             </div>
         </div>

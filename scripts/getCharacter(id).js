@@ -4,7 +4,7 @@ function getCharacter(id) {
     const link = url + "?" + apiKey + "&_id=" + id;
     return fetch(link)
         .then(res => res.json())
-        .then(data => data[0])
+        //.then(data => data[0])
 }
 
 

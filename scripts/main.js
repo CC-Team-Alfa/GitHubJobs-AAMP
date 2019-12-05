@@ -7,7 +7,7 @@ function disable (f) {
         f.children[i].children[0].style.opacity = 0.5;
     }
 };
-function unable (f) {
+function allow (f) {
     for (let i = 0; i < f.children.length; i++) {
         f.children[i].children[0].disabled = false;
         f.children[i].children[0].style.opacity = 1;
@@ -19,24 +19,49 @@ f1.addEventListener('click', (e) => {
     if (!f1Active) {
         f1Active = true;
         disable(f2);
-        unable(f1);
+     allow(f1);
     }
 });
 f2.addEventListener('click', (e) => {
     if (f1Active) {
         f1Active = false;
         disable(f1);
-        unable(f2);
+     allow(f2);
     }
 });
+
 let btn = document.getElementById('find');
-btn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    let name = document.getElementById('name');
-    let characterName = name.value.trim();
-    name.innerText = "";
-    //To Do: Display character with that charcterName
-    console.log(characterName);
+let result = document.getElementById('result');
+
+async function findAndGenerateByName (name) {
+    let character = (await getCharacters({name: name}))[0];
+    if (!character) {
+        return `There is no such character as '${name}'`
+    }
+    return generatedDetailsCharacterView(character);
+}
+
+async function findAndGenerateByFilters (filters) {
+    let characters = await getCharacters(filters);
+    return generateCharactersList(characters);
+}
+
+btn.addEventListener('click', async () => {
+    if(f1Active) {
+        result.innerHTML = "";
+        let name = document.getElementById('name');
+        let characterName = name.value.trim();
+        result.innerHTML = await findAndGenerateByName(characterName);
+    }
+    else {
+        result.innerHTML = "";
+        filters = {};
+        for (let i = 0; i < f2.children.length-1; i++) {
+            let filter = f2.children[i].children[0];
+            filter.value != 'none' ? filters[filter.name] = filter.value : null;
+        }
+        result.innerHTML = await findAndGenerateByFilters(filters);
+    }
 });
 
 
