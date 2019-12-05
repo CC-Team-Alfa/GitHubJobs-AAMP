@@ -2,9 +2,13 @@
 
 const generatedDetailsCharacterView = function(character){
     let element = `<div>`;
-    Object.keys(character).map(key => element = `${element}
-    <h5>${key}: ${character[key]}</h5>`);
+    Object.keys(character).map(key => {
+        if(key !== '_id' && key !== '__v'){
+            element = `${element}
+            <h5>${key}: ${character[key]}</h5>`;
+        }
+    })
     element = `${element}
-</div>`;
+    </div>`;
     return element;
 }
