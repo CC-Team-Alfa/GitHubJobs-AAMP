@@ -58,7 +58,15 @@ btn.addEventListener('click', async () => {
         filters = {};
         for (let i = 0; i < f2.children.length-1; i++) {
             let filter = f2.children[i].children[0];
-            filter.value != 'none' ? filters[filter.name] = filter.value : null;
+            if(filter.value === 'true'){
+                filters[filter.name] = true;
+            }
+            else if(filter.value === 'false'){
+                filters[filter.name] = false;   
+            }
+            else {
+                filter.value != 'none' ? filters[filter.name] = filter.value : null;
+            }
         }
         result.innerHTML = await findAndGenerateByFilters(filters);
     }
