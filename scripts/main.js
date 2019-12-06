@@ -80,5 +80,6 @@ generateHouseButton.addEventListener('click', async () => {
 
 document.body.addEventListener('dblclick', (e) => {
     if (e.shiftKey)
-        document.body.innerHTML = `<img src="./assets/images/hariPota.jpg">`
+        document.body.innerHTML = `<h1>Hari Pota</h1>
+                                <img src="./assets/images/hariPota.jpg" size="100%">`
 });
